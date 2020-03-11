@@ -1,0 +1,36 @@
+# Git using the Shell
+
+In this practical we will be initializing a repository using a shell window - the choice of which being dependent on what operating system you use. It is most commonly referred to as the terminal.
+
+## Initialising using a remote repository
+
+Follow the instructions to get a local copy of a remote repository nested within a chosen directory.
+
+1. Go to \url{https://gitlab.com/jumpingrivers-notes/r/jrgit_terminal}.
+
+2. Fork the repository to your GitLab account, as we did in practical 1. 
+
+2. Click the icon to the right of "Clone with HTTPS".
+
+3. Go to the terminal tab next to the console tab\sidenote{If a terminal tab is not visible, go to Tools -> Terminal -> New Terminal.}.
+
+4. Clone the remote repository onto your local machine.
+
+## Initlialising using an existing working directory
+
+Follow these instructions to initialise a Git project within an existing directory on your local computer. If possible find a directory that contains R files of some nature.
+
+1. Explore your own workspace using terminal commands to find the working directory you want to initialise.
+
+2. Initialise the Git repository. What hidden sub-directory do we now see? 
+   ```{r, tidy=TRUE,                                                  tidy.opts=list(width.cutoff=50) }
+   # A .git sub-directory 
+   ```
+
+3. Create a `.Rproj` R project. 
+
+4. Set the remote origin.
+
+\noindent{\textbf{CHECK}} 
+
+\noindent{Run \texttt{git remote -v} to check that we have added the desired remote upstream origin.}

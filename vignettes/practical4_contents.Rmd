@@ -1,0 +1,93 @@
+# Version Control - all things terminal
+
+In this practical you'll get the chance to put version control into practice on your own project. We will be analysing the `weatherAUS` data set and producing some nice data visualistaions. The key being, we want to integrate small changes we make to our projects, frequently. Before you get started, you need to load in the `weatherAUS` data set into your R session. We do this by running the following line of code:
+
+   ```{r, echo=TRUE}
+   data(weatherAUS, package = "jrGit4u")
+   ```
+   
+\noindent{In your project, you will be making use of two \textbf{tidyverse} packages - \textbf{dplyr} and \textbf{ggplot2}. We need to load\sidenote{If you don't currently have these packages installed on your local machine, you need to run \texttt{install.packages("dplyr")} and \texttt{install.packages("ggplot2")}} these packages by running}
+
+   ```{r, echo=TRUE, message=FALSE}
+   library("dplyr")
+   library("ggplot2")
+   ```
+   
+\noindent{We have layed out some initial questions for you to answer as part of your project brief, but we encourage you to try and extract other information from the data. Most importantly though - \textbf{DON'T FORGET TO MAKE REGULAR COMMITS}. We have given you queues along the way to get you into the habit of doing it. Before you get started, there are two main pre-requisites:}
+
+1. Making sure you are working in the `jrgit_terminal` directory you cloned in the last practical, create and switch to a new branch called `dev` or `develop`. Practice doing this with the use of the terminal.
+
+2. Open up an R script and save it as `weather_analysis.R` within your `jrgit_terminal` directory.
+
+## Tasks
+
+1. Inspect the data set by running 
+
+```{r, echo=TRUE}
+head(weatherAUS)
+```
+   
+2. How many weather observations and variables do we have in our data set? Hint: use the `dim()` function.
+   
+```{r}
+dim(weatherAUS)
+```
+
+3. Obtain a subset of the data set that just contains observations from the GoldCoast. Save it to memory by calling it `GoldCoast_data`.
+   
+```{r, tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+GoldCoast_data = weatherAUS %>%
+  filter(Location == "GoldCoast")
+```
+
+4. Find out the median minimum temperature and maximum rainfall, in mm, for all days in the GoldCoast region. Hint: We need to filter the data set to remove all missing (NA) values using `filter(!is.na(MinTemp) & !is.na(Rainfall))`.
+   
+```{r, tidy=TRUE, tidy.opts=list(width.cutoff=40)}
+GoldCoast_data %>%
+  filter(!is.na(MinTemp) & !is.na(Rainfall)) %>% 
+  summarise(median_min_temp = median(MinTemp),
+            max_rainfall = max(Rainfall))
+``` 
+   
+\begin{center}
+  \textbf{STOP - LET'S COMMIT AND PUSH OUR CHANGES USING THE TERMINAL}
+\end{center}
+\noindent{Use what you have learned in chapter 4 to do this, don't be afraid to refer back to the notes! Hint: Don't forget to switch back to your master branch and run \texttt{git pull}, after you have pushed your changes. It is also good practice to delete your newly made dev branch in doing so.}
+
+Create and switch to another `dev/develop` branch and complete the following:
+
+1. Find out how many days readings were taken on? **HARDER**
+
+```{r}
+weatherAUS %>%
+  group_by(Date) %>%
+  count() %>%
+  nrow()
+```
+
+2. In Melbourne, how many pairs of days did it rain successively? In other words how many times did it rain two days in a row. **HARDER**
+   
+```{r, tidy=TRUE, tidy.opts=list(width.cutoff=60) }
+weatherAUS %>%
+  filter(Location == "Melbourne" & RainToday == "Yes" &
+         RainTomorrow == "Yes") %>%
+  nrow()
+```
+
+3. Produce a scatter plot displaying the relationship between the wind speed at 9am and the temperature at 3pm, for the location Albury, across all recorded days. You will see that rows containing NA values relating to the two variables in question have been removed, hence the warning message. Use the following code to take a subset of the data:
+
+```{r, echo=TRUE}
+albury_data = weatherAUS %>%
+  filter(Location == "Albury")
+```
+
+```{r, warning=FALSE}
+ggplot(albury_data, aes(x = Humidity9am, y = Temp3pm)) +
+  geom_point()
+```
+   
+\begin{center}
+\textbf{STOP - LET'S COMMIT AND PUSH OUR NEW CHANGES, IN THE EXACT SAME WAY WE DID IT BEFORE}
+\end{center}
+
+\noindent{If you have time you can do some further analysis, you have free reign to do some further analysis!}

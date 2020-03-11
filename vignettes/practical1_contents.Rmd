@@ -1,0 +1,25 @@
+# Getting started
+
+## Forking and cloning a repository
+
+We are going to start off by cloning a repository from GitLab. Follow the instructions below to fork a full copy of the jrGitpractice repository from our Jumping Rivers GitLab account.
+
+1. Log in to your Gitlab account.
+
+2. Search jrGitpractice in the search bar at the top of the screen and click on jumpingrivers-notes/r/jrGitpractice.
+
+3. Click on the fork icon at the top right corner of the repository page and select the option that allows you to fork to your own namespace/account. In doing so this will automatically take you to your forked copy of the repository.
+
+4. Click on the blue 'clone' icon then click on the icon next to the URL under 'Clone with HTTPS'.
+
+5. Go to a new RStudio session.
+
+6. File -> New Project -> Version Control -> Git.
+
+7. Paste the URL into the 'Repository URL' field, then give it a directory name and path.
+
+8. Click 'Create Project'.
+
+9. Enter your GitLab password.
+
+You now have a full copy of the files\sidenote{In this case, just the one} in the jrGitpractice remote repository, saved on your local machine.

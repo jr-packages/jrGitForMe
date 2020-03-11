@@ -1,0 +1,70 @@
+# Version Control in Action
+
+This practical is designed to give you some practice in creating branches, pushing commits and all things Git with the RStudio Git interface!
+
+## Creating and switching between branches
+
+1. Enter the `jrgitpractice` project that we have stored locally upon cloning from our remote repository
+
+2. Have a look at what branches you currently have locally and remotely. What do you think origin means?
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # origin is the general word used to describe the
+   # upstream remote repository that has been synced
+   # with your local copy
+   ```
+
+3. Try creating a new branch called dev. Why is it important that we keep the box next to "Sync branch with renote" ticked? 
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # This forces the upstream dev remote branch to
+   # be formed under the same name as your local
+   # branch
+   ```
+
+4. As things stand, is there any difference between the files in your master and dev branch? Hint: We can check this by inspecting the Git tab in our dev branch
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # No - we have not yet made any changes or added
+   # any files to the files already nested within
+   # the dev branch. We can see this visually by
+   # observing the fact that there are no files
+   # ready to be staged for a commit. 
+   ```
+
+## Making changes locally and remotely
+
+1. Staying in your dev branch, edit the `hello_myname.R` file by changing "Unknown" to your name. Save it within the `jrgitpractice/` directory. 
+2. Tick the box to the left of your filename. What are we doing here and why does an "M" symbol appear?
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # We are staging the file in preperation for it
+   # to be commited. The M symbol stands for
+   # "Modified". This is telling is that we have
+   # changed a file that is already stored in the
+   # project.
+   ```
+
+3. Commit the `hello_myname.R` file. In doing so, provide a short message describing what commit you have made. Why is this important when working on collaborative projects?
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # Commit messages are important when working
+   # collaboratively because it gives collaborators
+   # a clear understanding of the updates you have
+   # made to a project. It also serves as a reminder
+   # to yourself for future reference.
+   ```
+
+4. Switch to your master branch. Why are there no commited files?
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # We have made commit objects in our other/dev
+   # branch, which is independent of our master
+   # branch
+   ```
+
+5. Switch back to your dev branch. Push your changes to the remote repository. What branch will be created in the remote repository?
+   ```{r, tidy=TRUE,                                   tidy.opts=list(width.cutoff=50)}
+   # A branch with the same name (dev) as your new
+   # branch will have been created in the remote
+   # repository. This is because we kept the box
+   # next to "Sync branch with remote" ticked.
+   ```
+
+```{r, eval= FALSE, echo = TRUE}
+vignette("solutions2", package = "jrGit4u")
+```

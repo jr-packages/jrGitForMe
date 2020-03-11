@@ -1,0 +1,29 @@
+Type: Package
+Package: jrGit4u
+Title: Jumping Rivers: Git for You
+Version: 0.0.1
+Authors@R: 
+    person(given = "Jumping",
+           family = "Rivers",
+           role = c("aut", "cre"),
+           email = "info@jumpingrivers.com")
+Description: Introduction to Git and Travis course material run
+    by Jumping Rivers.
+License: GPL-3
+URL: https://www.jumpingrivers.com/
+Depends:
+    R (>= 3.5.0)
+Imports:
+    dplyr,
+    ggplot2,
+    tidyverse,
+    usethis
+Suggests:
+    formatR,
+    knitr,
+    rmarkdown,
+    tufte
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+RoxygenNote: 7.0.2
