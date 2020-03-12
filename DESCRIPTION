@@ -1,6 +1,6 @@
 Type: Package
-Package: jrGit4u
-Title: Jumping Rivers: Git for You
+Package: jrGitForMe
+Title: Jumping Rivers: Git for Me
 Version: 0.0.1
 Authors@R: 
     person(given = "Jumping",
