@@ -3,7 +3,7 @@
 In this practical you'll get the chance to put version control into practice on your own project. We will be analysing the `weatherAUS` data set and producing some nice data visualistaions. The key being, we want to integrate small changes we make to our projects, frequently. Before you get started, you need to load in the `weatherAUS` data set into your R session. We do this by running the following line of code:
 
    ```{r, echo=TRUE}
-   data(weatherAUS, package = "jrGit4u")
+   data(weatherAUS, package = "jrGitForMe")
    ```
    
 \noindent{In your project, you will be making use of two \textbf{tidyverse} packages - \textbf{dplyr} and \textbf{ggplot2}. We need to load\sidenote{If you don't currently have these packages installed on your local machine, you need to run \texttt{install.packages("dplyr")} and \texttt{install.packages("ggplot2")}} these packages by running}
