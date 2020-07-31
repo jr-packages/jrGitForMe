@@ -1,7 +1,7 @@
 Type: Package
 Package: jrGitForMe
 Title: Jumping Rivers: Git for Me
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
